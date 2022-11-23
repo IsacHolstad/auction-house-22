@@ -6,7 +6,108 @@
     <script type="module" src="./js/signup.js" defer></script>
 </head>
 <body>
-    <h2 class="text-2xl text-center text-red-600">Sign up</h2>
+<div class="container mx-auto text-center p-8 drop-shadow-md">
+
+    <form
+            id="signup-form"
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left">
+        <h1 class="text-center text-3xl">😃 Sign up 😃</h1>
+        <div class="flex flex-col gap-y-1">
+            <label for="firstName"
+                   class="text-gray-600"
+            >
+                First Name: Required
+            </label>
+            <input
+                    id="firstName"
+                    class="p-2 rounded-xl border-2"
+                    name="firstName"
+                    type="text"
+                    placeholder="Name"
+                    spellcheck="true"
+            >
+            <span
+                    id="firstNameError"
+                    class="hidden text-sm text-red-600"
+            >
+                    Please enter your first name</span>
+        </div>
+
+        <div class="flex flex-col gap-y-1">
+            <label for="email" class="text-gray-600">Email: Required </label>
+            <input
+                    id="email"
+                    class="p-2 rounded-xl border-2"
+                    name="email"
+                    type="text"
+                    placeholder="Enter email">
+            <span
+                    id="emailErrorNotValid"
+                    class="hidden text-sm text-red-600"
+            >
+                    Email must be a stud.noroff.no or noroff.no email address
+                </span>
+            <span
+                    id="emailError"
+                    class="hidden text-sm text-red-600"
+            >
+                    Email is required
+                    </span>
+
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="password" class="text-gray-600">Password: Required </label>
+            <input
+                    id="password"
+                    class="p-2 rounded-xl border-2"
+                    name="password"
+                    type="password"
+                    placeholder="******">
+            <span
+                    id="passwordError"
+                    class="hidden text-sm text-red-600"
+            >
+                    Password is required and must be over 8 chars
+                    </span>
+            <span
+                    id="passwordErrorNotValid"
+                    class="hidden text-sm text-red-600"
+            >
+                    Password is not valid
+                    </span>
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="confirm_password" class="text-gray-600">Confirm Password: Required </label>
+            <input
+                    id="confirm_password"
+                    class="p-2 rounded-xl border-2"
+                    name="password"
+                    type="password"
+                    placeholder="Confirm Password"
+            >
+            <span
+                    id="confirmPasswordErrorNotMatching"
+                    class="hidden text-sm text-red-600"
+            >
+                    Passwords doesn't match
+                    </span>
+            <span
+                    id="confirmPasswordError"
+                    class="hidden text-sm text-red-600"
+            >
+                    Confirm Password is required and must be over 8 chars
+                    </span>
+        </div>
+        <button
+                class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
+                type="submit"
+        >
+            Sign In
+
+        </button>
+        <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>
+    </div>
+</form>
 
 
 </body>
