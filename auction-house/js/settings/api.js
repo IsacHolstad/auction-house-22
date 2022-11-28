@@ -9,5 +9,6 @@ export{
     USER_REGISTER_URL,
     API_BASE_URL,
     USER_LOGIN,
+    AUCTION_LISTINGS,
 
 }
