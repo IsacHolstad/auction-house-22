@@ -16,5 +16,6 @@ export{
     API_BASE_URL,
     USER_LOGIN,
     AUCTION_LISTINGS,
+    POST_AUCTION
 
 }
