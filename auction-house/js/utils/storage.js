@@ -36,7 +36,7 @@ function saveToStorage(key, value) {
 function getFromStorage(key) {
     const value = localStorage.getItem(key);
     if (value) {
-        return JSON.parse(value); // convert to js
+        return JSON.parse(value);
     } else {
         return []
     }
