@@ -6,6 +6,9 @@ const AUCTION_LISTINGS = API_BASE_URL + "/api/v1/auction/listings"
 const POST_AUCTION = API_BASE_URL + "/api/v1/auction/listings"
 
 
+//TODO ENDPOINTS IS NOT CORRECT
+
+
 // TODO  update auction = "/api/v1/auction/listings/<id>"
 //TODO delete auction = "/api/v1/auction/listings/<id>
 
