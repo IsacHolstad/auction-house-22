@@ -29,6 +29,8 @@ function getUserName() {
     }
 }
 
+
+
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value))
 }
@@ -47,3 +49,5 @@ function clearStorage() {
 }
 
 export {getToken, saveToken, saveUser, getUserName, clearStorage};
+
+console.log(getUserName)
