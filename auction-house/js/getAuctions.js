@@ -9,7 +9,17 @@ const accessToken = getToken()
 if (!accessToken) {
     location.href = "/login.html"
 }
-const auctionImg = document.querySelector("#auction-img")
-const auctionTitle = document.querySelector("#auction-title")
-const auctionDescription = document.querySelector("#auction-description")
-const auctionPricing = document.querySelector("#auction-pricing")
+(async function getAuctions() {
+    try{
+        const res = await fetch(AUCTION_LISTINGS);
+        const resJSON = await res.json();
+        const auctionsListings = resJSON.data;
+        for (let y = 0; y < resJSON.length; y++){
+            console.log("id of auctions:", resJSON[y].id)
+        }
+    }catch(error) {
+        console.log(error)
+    }
+
+})()
+
