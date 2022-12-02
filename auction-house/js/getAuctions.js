@@ -10,14 +10,15 @@ if (!accessToken) {
     location.href = "/login.html"
 }
 (async function getAuctions() {
-    try{
+    try {
         const res = await fetch(AUCTION_LISTINGS);
         const resJSON = await res.json();
         const auctionsListings = resJSON.data;
-        for (let y = 0; y < resJSON.length; y++){
+        for (let y = 0; y < resJSON.length; y++) {
             console.log("id of auctions:", resJSON[y].id)
+            console.log("title of auctions: ", resJSON[y].title)
         }
-    }catch(error) {
+    } catch (error) {
         console.log(error)
     }
 
