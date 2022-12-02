@@ -24,7 +24,7 @@ if (!accessToken) {
                   <div class=" flex space-x-4">
                     <div class=" bg-slate-300 h-32 w-32" id="auction-img"></div>
                     <div class="flex-1 space-y-6 py-1">
-                      <div class="h-2 bg-slate-300 " id="auction-title"></div>
+                      <div class="text-xl " id="auction-title">${resJSON[y].title}</div>
                       <div class="space-y-3">
                         <div class="grid grid-cols-3 gap-4">
                           <div class="h-2 bg-slate-300 rounded col-span-2" id="auction-pricing"></div>
