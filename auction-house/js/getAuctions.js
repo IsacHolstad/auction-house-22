@@ -32,7 +32,7 @@ if (!accessToken) {
                           <div class="h-10 text-center py-2  text-white bg-blue-400 rounded col-span-1">BID</div>
                           </a>
                         </div>
-                        <div class="h-2 bg-slate-300 rounded" id="auction-description"></div>
+                        <div class="h-2" id="auction-description">Ends: ${resJSON[j].endsAt}</div>
                       </div>
                     </div>
                   </div>
