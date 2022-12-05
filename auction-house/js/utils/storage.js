@@ -50,4 +50,3 @@ function clearStorage() {
 
 export {getToken, saveToken, saveUser, getUserName, clearStorage};
 
-console.log(getUserName)
