@@ -1,2 +1,4 @@
 const spesificAuctionItem = document.querySelector("#auction-container")
-console.log(spesificAuctionItem)
+
+import {SPESIFIC_AUCTION} from "./settings/api.js";
+
