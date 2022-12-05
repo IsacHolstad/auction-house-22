@@ -22,7 +22,7 @@ if (!accessToken) {
             container.innerHTML += `<div class="mt-8">
                 <div class="border border-black-700 shadow rounded-xl p-4 max-w-2xl w-full mx-auto h-56">
                   <div class=" flex space-x-4">
-                    <div class=" bg-slate-300 h-32 w-32" id="auction-img"></div>
+                    <img class=" bg-slate-300 h-32 w-32" id="auction-img" src="${resJSON[y].media}"></img>
                     <div class="flex-1 space-y-6 py-1">
                       <div class="text-xl " id="auction-title">${resJSON[y].title}</div>
                       <div class="space-y-3">
