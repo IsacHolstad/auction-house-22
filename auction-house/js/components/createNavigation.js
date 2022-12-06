@@ -13,7 +13,7 @@ function createNavigation() {
             <li class="p-8"><a href="index.html" class="${pathname === "/index.html" ? "text-blue-900" : " hover:underline"}">Home</a>
             </li>
             <li class="p-8">
-                <a href="/creat-post.html" class="${pathname === "./creat-post.html" ? "text-blue-900" : "hover:underline"}">Create Auction</a>
+                <a href="/create-auction.html" class="${pathname === "./creat-post.html" ? "text-blue-900" : "hover:underline"}">Create Auction</a>
             </li>
             <li class="p-8"><a href="./my-posts.html" class="${pathname === "/my-posts.html" ? "text-blue-900" : "hover:underline"}">My Auction</a>
             </li>

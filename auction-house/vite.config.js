@@ -11,7 +11,9 @@ export default defineConfig({
                 signup: resolve(__dirname, 'signup.html'),
                 welcome: resolve(__dirname, 'welcome.html'),
                 profile: resolve(__dirname, 'profile.html'),
-                auction_item: resolve(__dirname, 'spesific-listing.html')
+                auction_item: resolve(__dirname, 'spesific-listing.html'),
+                create_auction: resolve(__dirname, 'create-auction.html'),
+                my_auction: resolve(__dirname, 'my-auction.html')
             }
         }
     }
