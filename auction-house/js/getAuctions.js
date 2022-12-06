@@ -63,7 +63,7 @@ if (!accessToken) {
         }
     }else{
         const err = await response.json();
-        const messge = `Error happening${err} `
+        const message = `Error happening${err} `
         throw new Error(message)
     }
 })().catch(err =>{
