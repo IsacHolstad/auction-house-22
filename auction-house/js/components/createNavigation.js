@@ -13,9 +13,9 @@ function createNavigation() {
             <li class="p-8"><a href="index.html" class="${pathname === "/index.html" ? "text-blue-900" : " hover:underline"}">Home</a>
             </li>
             <li class="p-8">
-                <a href="/creat-post.html" class="${pathname === "./creat-post.html" ? "text-blue-900" : "hover:underline"}">Create Post</a>
+                <a href="/creat-post.html" class="${pathname === "./creat-post.html" ? "text-blue-900" : "hover:underline"}">Create Auction</a>
             </li>
-            <li class="p-8"><a href="./my-posts.html" class="${pathname === "/my-posts.html" ? "text-blue-900" : "hover:underline"}">My Posts</a>
+            <li class="p-8"><a href="./my-posts.html" class="${pathname === "/my-posts.html" ? "text-blue-900" : "hover:underline"}">My Auction</a>
             </li>
             <li class="p-8"><span>Hey 👋 ${userName}</span></li>
             <li class="p-8"><button id="logout-button" class="text-red-500 hover:underline">
