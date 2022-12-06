@@ -12,6 +12,65 @@
 
     </div>
 </header>
+<div class="container  mx-auto text-center p-8 drop-shadow-xl">
+    <form
+            id="login-form"
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left"
+    >
+        <h1 class="text-center text-3xl">Login</h1>
+        <label for="email"
+               class="text-gray-500 text-center"
+        >
+            Email: Required
+        </label>
+        <input
+                id="email"
+                class="p-2 rounded-xl border-2"
+                name="email"
+                type="email"
+                placeholder="Example@stud.noroff.no"
+        >
+        <span
+                id="emailErrorNotValid"
+                class="hidden text-sm text-red-500"
+
+        >
+            Email is not valid must be a valid stud.noroff.no or noroff.no email address
+
+        </span>
+        <span
+                id="emailError"
+                class="hidden text-red-800 text-sm"
+
+        >
+                Email Is Required
+            </span>
+        <label for="password" class="text-gray-500 text-center">Password: Required</label>
+        <input
+                id="password"
+                class="p-2 rounded-xl border-2"
+                name="password"
+                type="password"
+                placeholder="********">
+        <span
+                id="passwordError"
+                class="hidden text-sm text-red-600">
+            password must bee over 8 chars
+        </span>
+
+
+        <button
+                class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
+                type="submit"
+        >
+            Log In
+
+        </button>
+        <a href="signup.html" class="text-blue-600 hover:text-blue-400">Dont have an account?</a>
+        <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>
+    </form>
+</div>
+
 
 </body>
 </html>
