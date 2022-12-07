@@ -46,10 +46,12 @@ if (!accessToken) {
                                   <div class="text-xl " id="auction-title">${auctionTitle}</div>
                                   <div class="space-y-3">
                                     <div class="grid grid-cols-3 gap-4">
-                                      <div class="h-2 bg-slate-300 rounded col-span-2" id="auction-pricing"></div>
+                                      <div class="h-2  col-span-2" id="auction-pricing">price: ${post.tags}</div>
                                       <div class="h-10 text-center py-2  text-white bg-blue-400 rounded col-span-1">BID</div>
                                     </div>
+                                    <div>
                                     <div class="h-2" id="auction-description">Ends: now</div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
