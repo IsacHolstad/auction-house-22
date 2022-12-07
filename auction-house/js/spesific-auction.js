@@ -5,11 +5,11 @@ import {getToken} from "./utils/storage.js";
 
 const paramString = window.location.search;
 const searchParam = new URLSearchParams(paramString);
-const id = searchParam.get("id");
+const auctionId = searchParam.get("post_id");
 const accessToken = getToken();
 
 async function getAuctionById() {
-    const response = await fetch(`${SPESIFIC_AUCTION}/${"id"}`, {
+    const response = await fetch(`${SPESIFIC_AUCTION}/${auctionId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json", "Authorization": `Bearer ${accessToken}`
