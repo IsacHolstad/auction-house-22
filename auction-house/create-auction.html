@@ -17,56 +17,56 @@
             id="login-form"
             class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left"
     >
-        <h1 class="text-center text-3xl">Login</h1>
+        <h1 class="text-center text-3xl">Create Auction</h1>
         <label for="email"
                class="text-gray-500 text-center"
         >
-            Email: Required
+            Title: Required
         </label>
         <input
                 id="email"
                 class="p-2 rounded-xl border-2"
                 name="email"
                 type="email"
-                placeholder="Example@stud.noroff.no"
+                placeholder="Title"
         >
-        <span
-                id="emailErrorNotValid"
-                class="hidden text-sm text-red-500"
 
-        >
-            Email is not valid must be a valid stud.noroff.no or noroff.no email address
-
-        </span>
         <span
-                id="emailError"
+                id="titleError"
                 class="hidden text-red-800 text-sm"
 
         >
-                Email Is Required
+                Description Is Required
             </span>
-        <label for="password" class="text-gray-500 text-center">Password: Required</label>
+        <label for="password" class="text-gray-500 text-center">Description: Required</label>
         <input
                 id="password"
-                class="p-2 rounded-xl border-2"
+                class="p-2 rounded-xl border-2 h-24"
                 name="password"
                 type="password"
-                placeholder="********">
+                placeholder="Description...">
         <span
                 id="passwordError"
                 class="hidden text-sm text-red-600">
             password must bee over 8 chars
         </span>
+        <label for="auctionImg" class="text-gray-500 text-center" >Image: Required</label>
+        <input
+                id="auctionImg"
+                class="rounded-xl border-8"
+                name="auctionImg"
+                type="file"
+                placeholder="Choose image"
+        >
 
 
         <button
                 class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
                 type="submit"
         >
-            Log In
+            Publish Auction
 
         </button>
-        <a href="signup.html" class="text-blue-600 hover:text-blue-400">Dont have an account?</a>
         <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>
     </form>
 </div>
