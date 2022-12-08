@@ -14,21 +14,21 @@
 </header>
 <div class="container  mx-auto text-center p-8 drop-shadow-xl">
     <form
-            id="login-form"
+            id="create-auction-form"
             class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left"
     >
         <h1 class="text-center text-3xl">Create Auction</h1>
-        <label for="email"
+        <label for="auctionTitle"
                class="text-gray-500 text-center"
         >
             Title: Required
         </label>
         <input
-                id="email"
+                id="auctionTitle"
                 class="p-2 rounded-xl border-2"
-                name="email"
-                type="email"
-                placeholder="Title"
+                name="auctionTitle"
+                type="text"
+                placeholder="Auction Title"
         >
 
         <span
@@ -38,17 +38,17 @@
         >
                 Description Is Required
             </span>
-        <label for="password" class="text-gray-500 text-center">Description: Required</label>
+        <label for="auctionDescription" class="text-gray-500 text-center">Description: Required</label>
         <input
-                id="password"
+                id="auctionDescription"
                 class="p-2 rounded-xl border-2 h-24"
-                name="password"
-                type="password"
+                name="auctionDescription"
+                type="text"
                 placeholder="Description...">
         <span
-                id="passwordError"
+                id="descriptionError"
                 class="hidden text-sm text-red-600">
-            password must bee over 8 chars
+            password must bee over 10 chars
         </span>
         <label for="auctionImg" class="text-gray-500 text-center" >Image: Required</label>
         <input
