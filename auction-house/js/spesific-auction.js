@@ -41,7 +41,7 @@ async function getAuctionById() {
                                 <div class="h-2 " id="auction-description">Eends: ${endsAt}</div>
                                     <div class="h-2 " id="auction-description">Updated: ${endsAt}</div>
                         </div>
-                        <p class="py-8">${description}</p>
+                        <p class="py-8">description: ${description}</p>
                       </div>
                     </div>
                   </div>
