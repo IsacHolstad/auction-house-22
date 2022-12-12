@@ -1,6 +1,6 @@
 import moment from "moment";
 import {getToken} from "./utils/storage.js";
-import {AUCTION_LISTINGS} from "./settings/api.js";
+import {AUCTION_LISTINGS, SPESIFIC_AUCTION} from "./settings/api.js";
 
 console.log(AUCTION_LISTINGS)
 
@@ -33,16 +33,17 @@ if (!accessToken) {
                 const auctionImage = post.media;
                 const auctionTags = post.tags;
                 //const minutesToEnds = now.diff(, 'minutes')
-                //const auctionCreated = post.created;
+                const auctionCreated = post.created;
                // const auctionUpdated = post.updated;
-                //const auctionEnding = post.endsAt;
-                //const auctionHolder = post.seller;
+                const auctionEnding = post.endsAt;
+                const auctionPrice = post._count.bids
+                const auctionHolder = post.seller;
                 //const auctionBidAmount = post.bids;
                 //const auctionsBids = post.bids;
-                return(`<a href="./spesific-listing.html?post_id=${post.id}"><div class="mt-8">
+                return(`<a href="./spesific-listing.html?post_id=${post.id}"><div class="mt-8 container">
                             <div class="border border-black-700 shadow rounded-xl p-4 max-w-3xl w-full mx-auto h-56">
                               <div class=" flex space-x-4">
-                                <img class="h-36 w-36 object-contain " id="auction-img" src="${auctionImage}"></img>
+                                <img class="h-36 w-36 object-contain " id="auction-img" src="${auctionImage}"/>
                                 <div class="flex-1 space-y-6 py-1">
                                   <div class="text-2xl " id="auction-title">${auctionTitle}</div>
                                   <div class="space-y-3">
@@ -51,7 +52,7 @@ if (!accessToken) {
                                       <div class="h-10 text-center py-2  text-white bg-blue-400 rounded col-span-1">BID</div>
                                     </div>
                                     <div>
-                                    <div class="h-2 py-4" id="auction-description">Auction Ends: ${now}</div>
+                                    <div class="h-2 py-4" id="auction-description">Auction Ends: ${post.endsAt}</div>
                                     </div>
                                   </div>
                                 </div>
