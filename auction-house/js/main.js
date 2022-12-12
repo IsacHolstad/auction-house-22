@@ -4,10 +4,10 @@ import creatNavigation from "./components/createNavigation.js"
 
 creatNavigation();
 
-const logOutbtn = document.querySelector("#logout-button");
+const logOutBtn = document.querySelector("#logout-button");
 
-if (logOutbtn) {
-    logOutbtn.addEventListener("click", function () {
+if (logOutBtn) {
+    logOutBtn.addEventListener("click", function () {
         clearStorage();
         window.location.replace("/login.html")
     })

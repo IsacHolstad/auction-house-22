@@ -11,6 +11,12 @@ const listTagThree = document.querySelector("#listTagThree");
 const listImgOne = document.querySelector("#listImgOne");
 const listingEndDate = document.querySelector("#listingEndDate");
 
+const accessToken = getToken()
+
+if (!accessToken) {
+    location.href = "/login.html"
+}
+
 createListingForm.addEventListener("submit", function (event) {
     event.preventDefault()
     console.log("i clicked the create button")
@@ -39,7 +45,7 @@ createListingForm.addEventListener("submit", function (event) {
 
     const accessToken = getToken()
     async function createAuctionListing() {
-        const response = await fetch(CREATE_AUCTION, {
+        const response = await fetch("https://api.noroff.dev/api/v1/auction/listings", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -60,7 +66,7 @@ createListingForm.addEventListener("submit", function (event) {
         }
         createListingForm.reset();
     }
-    createAuctionListing();
+    createAuctionListing().catch()
 
 
 
