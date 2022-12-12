@@ -40,6 +40,7 @@ createListingForm.addEventListener("submit", function (event) {
         console.log("auction creation listing response", response)
         if (response.ok) {
             const data = await response.json();
+            location.href = "/index.html"
             console.log(data);
             console.log("post was successfully created!!")
         } else{
