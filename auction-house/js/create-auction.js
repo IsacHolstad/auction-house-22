@@ -16,13 +16,41 @@ createListingForm.addEventListener("submit", function (event) {
     console.log("i clicked the create button")
 
     const listingTags = [listTagOne.value, listTagTwo.value, listTagThree.value];
-    const listingImg = [listImgOne.value];
+    const listingImages = [listImgOne.value];
 
     const listingData = {
         "title": listingTitle.value.trim(),
-        ""
+        "description": listDescription.value.trim(),
+        "tags": listingTags,
+        "media": listingImages.length > 0 ? listingImages : null,
+        "endsAt": listingEndDate.value
     }
+    console.log("auction was made successfully", listingData)
+
+    const accessToken = getToken()
+    async function createAuctionListing() {
+        const response = await fetch(CREATE_AUCTION, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${accessToken}`
+            },
+            body: JSON.stringify(listingData)
+        })
+        console.log("auction creation listing response", response)
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            console.log("post was successfully created!!")
+        } else{
+            const error = await response.json();
+            console.log(error);
+            console.log("post was failed to creat!!")
+        }
+        createListingForm.reset();
+    }
+    createAuctionListing();
 
 
 
-})
+});
