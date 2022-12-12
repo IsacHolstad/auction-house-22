@@ -1,5 +1,5 @@
 import {getToken} from "./utils/storage.js";
-import {CREATE_AUCTION, AUCTION_LISTINGS} from "./settings/api.js";
+import {CREATE_AUCTION} from "./settings/api.js";
 
 const createListingForm = document.querySelector("#create-listing-form");
 
@@ -14,6 +14,16 @@ const listingEndDate = document.querySelector("#listingEndDate");
 createListingForm.addEventListener("submit", function (event) {
     event.preventDefault()
     console.log("i clicked the create button")
+    console.log(listingTitle.value.trim())
+    console.log(listDescription.value.trim())
+
+    console.log(listTagOne.value.trim())
+    console.log(listTagTwo.value.trim())
+    console.log(listTagThree.value.trim())
+
+    console.log(listImgOne.value.trim())
+
+    console.log(listingEndDate.value)
 
     const listingTags = [listTagOne.value, listTagTwo.value, listTagThree.value];
     const listingImages = [listImgOne.value];

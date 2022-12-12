@@ -5,7 +5,7 @@ const USER_LOGIN = API_BASE_URL + "api/v1/auction/auth/login"
 const AUCTION_LISTINGS = API_BASE_URL + "api/v1/auction/listings"
 const SPESIFIC_AUCTION = API_BASE_URL + "api/v1/auction/listings"
 const POST_AUCTION = API_BASE_URL + "api/v1/auction/listings/"
-const CREATE_AUCTION = API_BASE_URL + "/api/v1/auction/listings"
+const CREATE_AUCTION = API_BASE_URL + "api/v1/auction/listings"
 
 
 //TODO ENDPOINTS IS CORRECT!!!
