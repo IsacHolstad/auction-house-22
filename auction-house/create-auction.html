@@ -13,64 +13,86 @@
 
     </div>
 </header>
-<div class="container  mx-auto text-center p-8 drop-shadow-xl">
+<main class="container mx-auto mt-12">
     <form
-            id="create-auction-form"
-            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left"
-    >
-        <h1 class="text-center text-3xl">Create Auction</h1>
-        <label for="auctionTitle"
-               class="text-gray-500 text-center"
-        >
-            Title: Required
-        </label>
-        <input
-                id="auctionTitle"
-                class="p-2 rounded-xl border-2"
-                name="auctionTitle"
-                type="text"
-                placeholder="Auction Title"
-        >
+            id="create-listing-form"
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 text-left bg-gray-300 rounded-md drop-shadow-lg	">
+        <h2 class="mb-4 text-2xl text-center">Create Auction</h2>
 
-        <span
-                id="titleError"
-                class="hidden text-red-800 text-sm"
+        <div class="flex flex-col gap-y-1">
+            <label for="listingTitle" class="text-gray-600">Auction Title: (Required) </label>
+            <input
+                    id="listingTitle"
+                    class="p-2 rounded-md"
+                    name="postTitle"
+                    type="text"
+                    placeholder="Enter a list title">
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="listDescription" class="text-gray-600">Auction Description: (Required) </label>
+            <textarea
+                    rows="3"
+                    name="listDescription"
+                    id="listDescription"
+                    class="block w-full resize-none border-0 placeholder-gray-400 focus:ring-0 sm:text-sm p-2 rounded-md"
+                    placeholder="Write a description of your car..."></textarea>
+        </div>
+        <h3 class="underline font-bold">Add tags for your listing</h3>
+        <div class="flex flex-col gap-y-1">
+            <label for="listTagOne" class="text-gray-600">Auction Tag One: (optional) </label>
+            <input
+                    type="text"
+                    name="listTagOne"
+                    id="listTagOne"
+                    class="block w-full resize-none border-0 placeholder-gray-400 focus:ring-0 sm:text-sm p-2 rounded-md"
+                    placeholder="tag 1..."/>
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="listTagTwo" class="text-gray-600">Auction Tag Two: (optional) </label>
+            <input
+                    type="text"
+                    name="listTagTwo"
+                    id="listTagTwo"
+                    class="block w-full resize-none border-0 placeholder-gray-400 focus:ring-0 sm:text-sm p-2 rounded-md"
+                    placeholder="tag 2..."/>
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="listTagThree" class="text-gray-600">Auction Tag Three: (optional) </label>
+            <input
+                    type="text"
+                    name="listTagThree"
+                    id="listTagThree"
+                    class="block w-full resize-none border-0 placeholder-gray-400 focus:ring-0 sm:text-sm p-2 rounded-md"
+                    placeholder="tag 3..."/>
+        </div>
 
-        >
-                Description Is Required
-            </span>
-        <label for="auctionDescription" class="text-gray-500 text-center">Description: Required</label>
-        <input
-                id="auctionDescription"
-                class="p-2 rounded-xl border-2 h-24"
-                name="auctionDescription"
-                type="text"
-                placeholder="Description...">
-        <span
-                id="descriptionError"
-                class="hidden text-sm text-red-600">
-            password must bee over 10 chars
-        </span>
-        <label for="auctionImg" class="text-gray-500 text-center" >Image: Required</label>
-        <input
-                id="auctionImg"
-                class="rounded-xl border-8"
-                name="auctionImg"
-                type="file"
-                placeholder="Choose image"
-        >
+        <h3 class="underline font-bold">Add images URL for your Auction</h3>
+        <div class="flex flex-col gap-y-1">
+            <label for="listImgOne" class="text-gray-600">Auction Img: (optional) </label>
+            <input
+                    type="text"
+                    name="listImgOne"
+                    id="listImgOne"
+                    class="block w-full resize-none border-0 placeholder-gray-400 focus:ring-0 sm:text-sm p-2 rounded-md"
+                    placeholder="auction img"/>
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="listingEndDate" class="text-gray-600">Auction End Date: (required) </label>
+            <input
+                    id="listingEndDate"
+                    name="listingEndDate"
+                    type="datetime-local"
+                    class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                    placeholder="2020-01-01T00:00:00.000Z"
+            />
+        </div>
 
-
-        <button
-                class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
-                type="submit"
-        >
-            Publish Auction
-
+        <button class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
+                type="submit">
+            create
         </button>
-        <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>
     </form>
-</div>
+</main>
 
 
 </body>
