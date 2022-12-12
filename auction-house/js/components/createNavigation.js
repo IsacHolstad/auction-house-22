@@ -24,7 +24,7 @@ function createNavigation() {
             `
         }
         navBar.innerHTML = `
-        <ul class="flex text-sm">
+        <ul class="flex text-sm container">
         ${navLinks}
         </ul>
         `
