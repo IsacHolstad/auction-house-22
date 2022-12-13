@@ -35,22 +35,25 @@ createListingForm.addEventListener("submit", function (event) {
     const listingImages = [listImgOne.value];
 
     let listingData;
+    console.log(listingImages)
+    console.log(listingImages.length)
 
-    if (listingData.media.length) {
+    if (listingImages[0] !== "") {
+        console.log("here")
         listingData = {
             "title": listingTitle.value.trim(),
             "description": listDescription.value.trim(),
             "tags": listingTags,
-            //"media": listingImages.length > 0 ? listingImages : [],
+            "media": listingImages,
             "endsAt": listingEndDate.value
         }
 
         } else{
+        console.log("here two")
         listingData = {
             "title": listingTitle.value.trim(),
             "description": listDescription.value.trim(),
             "tags": listingTags,
-            //"media": listingImages.length > 0 ? listingImages : [],
             "endsAt": listingEndDate.value
         }
 
