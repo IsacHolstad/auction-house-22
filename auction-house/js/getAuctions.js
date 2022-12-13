@@ -49,7 +49,7 @@ if (!accessToken) {
                                   <div class="space-y-3">
                                     <div class="grid grid-cols-3 gap-4">
                                       <div class="h-2  col-span-2 text-xl" id="auction-pricing">Price: ${post.tags}</div>
-                                      <div class="h-10 text-center py-2  text-white bg-blue-400 rounded col-span-1">BID</div>
+                                      <button class="h-10 text-center py-2  text-white bg-blue-400 rounded col-span-1">BID</button>
                                     </div>
                                     <div>
                                     <div class="h-2 py-4" id="auction-description">Auction Ends: ${post.endsAt}</div>
