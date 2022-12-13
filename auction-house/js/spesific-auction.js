@@ -1,19 +1,18 @@
-import {SPESIFIC_AUCTION, AUCTION_LISTINGS} from "./settings/api.js";
+import {SPESIFIC_AUCTION} from "./settings/api.js";
 import {getToken} from "./utils/storage.js";
 
 const paramString = window.location.search;
 const searchParam = new URLSearchParams(paramString);
-const auctionId = searchParam.get("post_id");
+const listingId = searchParam.get("post_id");
 const accessToken = getToken();
-console.log(auctionId)
 
 const auctionTitle = document.querySelector("#list-title")
 const auctionID = document.querySelector("#list-id")
 const auctionDesc = document.querySelector("#list-desc")
 const auctionBids = document.querySelector("#list-bids")
 
-async function getuctionById() {
-    const response = await fetch(`${SPESIFIC_AUCTION}/${auctionId}`, {
+async function getAuctionById() {
+    const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -31,7 +30,7 @@ async function getuctionById() {
 }
 
 
-getuctionById();
+getAuctionById();
 
 const auctionBidInput = document.querySelector("#listing-bid-input")
 const biddingForm = document.querySelector("#bidding-form")
@@ -45,7 +44,7 @@ biddingForm.addEventListener("submit", function (event){
     }
 
     async function bidOnAuction() {
-        const response = await fetch(`${SPESIFIC_AUCTION}/${auctionId}/bids`,{
+        const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}/bids`,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
