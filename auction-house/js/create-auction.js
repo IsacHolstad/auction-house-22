@@ -34,13 +34,30 @@ createListingForm.addEventListener("submit", function (event) {
     const listingTags = [listTagOne.value, listTagTwo.value, listTagThree.value];
     const listingImages = [listImgOne.value];
 
-    const listingData = {
-        "title": listingTitle.value.trim(),
-        "description": listDescription.value.trim(),
-        "tags": listingTags,
-        "media": listingImages.length > 0 ? listingImages : null,
-        "endsAt": listingEndDate.value
-    }
+    let listingData;
+
+    if (listingData.media.length) {
+        listingData = {
+            "title": listingTitle.value.trim(),
+            "description": listDescription.value.trim(),
+            "tags": listingTags,
+            //"media": listingImages.length > 0 ? listingImages : [],
+            "endsAt": listingEndDate.value
+        }
+
+        } else{
+        listingData = {
+            "title": listingTitle.value.trim(),
+            "description": listDescription.value.trim(),
+            "tags": listingTags,
+            //"media": listingImages.length > 0 ? listingImages : [],
+            "endsAt": listingEndDate.value
+        }
+
+
+        }
+
+
     console.log("auction was made successfully", listingData)
 
     const accessToken = getToken()
