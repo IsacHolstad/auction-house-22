@@ -1,6 +1,7 @@
 const API_BASE_URL = `https://nf-api.onrender.com/`
 import {getUserName} from "../utils/storage.js";
 const userName = getUserName();
+console.log(userName)
 
 const USER_REGISTER_URL = API_BASE_URL + "api/v1/auction/auth/register"
 const USER_LOGIN = API_BASE_URL + "api/v1/auction/auth/login"

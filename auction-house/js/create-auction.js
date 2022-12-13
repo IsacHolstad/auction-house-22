@@ -45,7 +45,7 @@ createListingForm.addEventListener("submit", function (event) {
 
     const accessToken = getToken()
     async function createAuctionListing() {
-        const response = await fetch("https://api.noroff.dev/api/v1/auction/listings", {
+        const response = await fetch(CREATE_AUCTION, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
