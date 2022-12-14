@@ -1,5 +1,5 @@
 import moment from "moment";
-
+let now = moment(new Date())
 console.log(moment)
 import {getToken} from "./utils/storage.js";
 
@@ -41,7 +41,7 @@ async function getUserAuctions() {
                 myAuctions.innerHTML += `<div class="mt-8 container">
                             <div class="border border-black-700 shadow rounded-xl p-4 max-w-3xl w-full mx-auto h-56">
                               <div class=" flex space-x-4">
-                                <img class="h-36 w-36 object-contain " id="auction-img" src="${auctions[i].media}"/>
+                                <img class="h-36 w-36 object-contain " id="auction-img" src="${auctions[i].media}" alt="auction image"/>
                                 <div class="flex-1 space-y-6 py-1">
                                   <div class="text-2xl " id="auction-title">${auctions[i].Title}</div>
                                   <div class="space-y-3">
@@ -99,7 +99,7 @@ function handleDeleteAuctionById(id) {
             });
             if (response.status === 200) {
                 getUserAuctions().then(() => {
-                    handleDeleteBtnsEvent()
+                    handleDeleteButtonEvent()
                 });
 
             } else {
@@ -112,6 +112,7 @@ function handleDeleteAuctionById(id) {
         }
     }
     deleteUserById().then(r => {
+        console.log(r)
 
     });
 }

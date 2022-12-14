@@ -29,15 +29,13 @@ if (!accessToken) {
         } else{
             const listOfAuctions = auctions.map((post) =>{
                 const auctionTitle = post.title;
-                const auctionDescription = post.description;
                 const auctionImage = post.media;
                 const auctionTags = post.tags;
-                //const minutesToEnds = now.diff(, 'minutes')
+                const auctionEnding = post.endsAt;
+                const minutesToEnds = now.diff(auctionEnding, 'hours')
                 const auctionCreated = post.created;
                // const auctionUpdated = post.updated;
-                const auctionEnding = post.endsAt;
                 const auctionPrice = post._count.bids
-                const auctionHolder = post.seller;
                 const auctionBidAmount = post._count.bids;
                 //const auctionsBids = post.bids;
                 return(`<a href="./spesific-listing.html?post_id=${post.id}"><div class="mt-8 container">
@@ -52,7 +50,7 @@ if (!accessToken) {
                                       <button class="h-10 text-center py-2  text-white bg-blue-400 rounded col-span-1">BID</button>
                                     </div>
                                     <div>
-                                    <div class="h-2 py-4" id="auction-description">Auction Ends: ${post.endsAt}</div>
+                                    <div class="h-2 py-4" id="auction-description">Auction Ends in: ${minutesToEnds} minutes</div>
                                     </div>
                                   </div>
                                 </div>
