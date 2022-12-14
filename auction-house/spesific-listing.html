@@ -13,27 +13,29 @@
     </div>
 </header>
 <main class="container mx-auto">
-    <h2 class="text-2xl ">Auction Details</h2>
-    <ul class="p-8">
-        <li>
-            <span>Title : </span>
-            <span id="list-title"></span>
-        </li>
-        <li id="list-id">
-        </li>
-        <li id="list-desc">
-        </li>
 
-        <li id="list-bids">
-        </li>
-    </ul>
     <form
             id="bidding-form"
-            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 text-left bg-gray-300 rounded-md border shadow">
-        <h2 class="mb-4 text-2xl ">Bid on this Auction</h2>
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 text-left bg-gray-300 rounded-md border shadow-xl">
+        <h2 class="mb-4 text-3xl text-center">Bid on this Auction</h2>
+        <h2 class="text-2xl mt-8 text-center">Auction Details:</h2>
+        <ul class="p-8">
+            <li>
+                <span>Title : </span>
+                <span id="list-title"></span>
+            </li>
+            <li id="list-id">
+            </li>
+            <li id="list-desc">
+            </li>
+            <img id="list-img" class="">
+
+            <span>Bids:</span>
+            <li id="list-bids">
+            </li>
+        </ul>
 
         <div class="flex flex-col gap-y-1">
-            <label for="listing-bid-input" class="text-gray-600">Listing Bid </label>
             <input
                     id="listing-bid-input"
                     class="p-2 rounded-md"

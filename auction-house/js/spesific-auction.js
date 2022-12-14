@@ -1,4 +1,3 @@
-import {SPESIFIC_AUCTION} from "./settings/api.js";
 import {getToken} from "./utils/storage.js";
 
 const paramString = window.location.search;
@@ -10,6 +9,7 @@ const auctionTitle = document.querySelector("#list-title")
 const auctionID = document.querySelector("#list-id")
 const auctionDesc = document.querySelector("#list-desc")
 const auctionBids = document.querySelector("#list-bids")
+const auctionImg = document.querySelector("#list-img")
 
 async function getAuctionById() {
     const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}`, {
@@ -27,6 +27,7 @@ async function getAuctionById() {
     auctionID.innerHTML = data.id
     auctionDesc.innerHTML = data.description
     auctionBids.innerHTML = data._count.bids
+    auctionImg.innerHTML = data.media
 }
 
 

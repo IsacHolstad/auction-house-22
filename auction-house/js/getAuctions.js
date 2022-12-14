@@ -38,7 +38,7 @@ if (!accessToken) {
                 const auctionEnding = post.endsAt;
                 const auctionPrice = post._count.bids
                 const auctionHolder = post.seller;
-                //const auctionBidAmount = post.bids;
+                const auctionBidAmount = post._count.bids;
                 //const auctionsBids = post.bids;
                 return(`<a href="./spesific-listing.html?post_id=${post.id}"><div class="mt-8 container">
                             <div class="border border-black-700 shadow rounded-xl p-4 max-w-3xl w-full mx-auto h-56">
@@ -48,7 +48,7 @@ if (!accessToken) {
                                   <div class="text-2xl " id="auction-title">${auctionTitle}</div>
                                   <div class="space-y-3">
                                     <div class="grid grid-cols-3 gap-4">
-                                      <div class="h-2  col-span-2 text-xl" id="auction-pricing">Price: ${post.tags}</div>
+                                      <div class="h-2  col-span-2 text-xl" id="auction-pricing">Bids: ${post._count.bids}</div>
                                       <button class="h-10 text-center py-2  text-white bg-blue-400 rounded col-span-1">BID</button>
                                     </div>
                                     <div>
