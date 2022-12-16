@@ -1,12 +1,10 @@
 import {USER_LOGIN} from "./settings/api.js";
 
-console.log(USER_LOGIN)
 import {validationEmail} from "./utils/validation.js";
 import {saveUser, saveToken} from "./utils/storage.js";
 
 const logInForm = document.querySelector("#login-form");
 
-//TODO validate login data
 const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
 const emailErrorNotValid = document.querySelector("#emailErrorNotValid");

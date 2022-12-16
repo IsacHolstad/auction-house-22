@@ -2,8 +2,6 @@ const tokenKey = "token";
 const userKey = "user";
 
 function saveToken(token) {
-    console.log("token: ", token)
-    console.log("tokenKey: ", tokenKey)
     saveToStorage(tokenKey, token);
 }
 
@@ -28,7 +26,6 @@ function getUserName() {
         return null;
     }
 }
-
 
 
 function saveToStorage(key, value) {

@@ -1,21 +1,17 @@
 import moment from "moment";
 let now = moment(new Date())
-console.log(moment)
 import {getToken} from "./utils/storage.js";
 
 const accessToken = getToken();
-console.log("User Token: ", accessToken)
 
 import {MY_AUCTIONS, DELETE_USER_AUCTION_BY_ID} from "./settings/api.js";
 import {getUserName} from "./utils/storage.js";
 
-console.log(MY_AUCTIONS);
 console.log(getUserName())
+
 
 const myAuctions = document.querySelector("#my-auctions");
 const auctionNotificationMessage = document.querySelector(".posts__notification");
-console.log(auctionNotificationMessage)
-console.log(myAuctions)
 
 async function getUserAuctions() {
     const response = await fetch(MY_AUCTIONS, {
@@ -27,12 +23,11 @@ async function getUserAuctions() {
     })
     if (response.ok) {
         const jsonResponse = await response.json()
-        console.log(jsonResponse)
         myAuctions.innerHTML = "";
         const {auctions} = jsonResponse;
         if (!auctions.length) {
-            auctionNotificationMessage.innerHTML = `<h3 class="text-red-300 text-center">You don't have any auctions</h3>
-                <a href="./create-auction.html" class=" animate-bounce bg-blue-600 block text-center rounded-xl mx-auto mt-32 text-white text-3xl drop-shadow-xl p-4">Click me to make a auction</a>`
+            auctionNotificationMessage.innerHTML = `<h3 class="text-red-300 text-center mt-8">You don't have any auctions</h3>
+                <a href="./create-auction.html" class=" animate-bounce bg-blue-600 block text-center rounded-xl mx-auto mt-32 text-white text-3xl drop-shadow-xl p-4 w-96">Click to make auction</a>`
         } else{
             const numberOfAuctions = auctions.length;
             for (let i = 0; i < numberOfAuctions; i++) {
@@ -70,9 +65,8 @@ async function getUserAuctions() {
 }
 
 
-
 getUserAuctions().then(() =>{
-    handleDeleteButtonEvent()
+    handleDeleteButtonEvent();
 })
 
 function handleDeleteButtonEvent() {
@@ -116,5 +110,3 @@ function handleDeleteAuctionById(id) {
 
     });
 }
-
-

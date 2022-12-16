@@ -11,35 +11,21 @@ const listTagThree = document.querySelector("#listTagThree");
 const listImgOne = document.querySelector("#listImgOne");
 const listingEndDate = document.querySelector("#listingEndDate");
 
-const accessToken = getToken()
+const accessToken = getToken();
 
 if (!accessToken) {
     location.href = "/login.html"
 }
 
 createListingForm.addEventListener("submit", function (event) {
-    event.preventDefault()
-    console.log("i clicked the create button")
-    console.log(listingTitle.value.trim())
-    console.log(listDescription.value.trim())
-
-    console.log(listTagOne.value.trim())
-    console.log(listTagTwo.value.trim())
-    console.log(listTagThree.value.trim())
-
-    console.log(listImgOne.value.trim())
-
-    console.log(listingEndDate.value)
+    event.preventDefault();
 
     const listingTags = [listTagOne.value, listTagTwo.value, listTagThree.value];
     const listingImages = [listImgOne.value];
 
     let listingData;
-    console.log(listingImages)
-    console.log(listingImages.length)
 
     if (listingImages[0] !== "") {
-        console.log("here")
         listingData = {
             "title": listingTitle.value.trim(),
             "description": listDescription.value.trim(),
@@ -48,8 +34,7 @@ createListingForm.addEventListener("submit", function (event) {
             "endsAt": listingEndDate.value
         }
 
-        } else{
-        console.log("here two")
+    } else {
         listingData = {
             "title": listingTitle.value.trim(),
             "description": listDescription.value.trim(),
@@ -58,12 +43,10 @@ createListingForm.addEventListener("submit", function (event) {
         }
 
 
-        }
+    }
 
+    const accessToken = getToken();
 
-    console.log("auction was made successfully", listingData)
-
-    const accessToken = getToken()
     async function createAuctionListing() {
         const response = await fetch(CREATE_AUCTION, {
             method: "POST",
@@ -73,21 +56,18 @@ createListingForm.addEventListener("submit", function (event) {
             },
             body: JSON.stringify(listingData)
         })
-        console.log("auction creation listing response", response)
         if (response.ok) {
             const data = await response.json();
-            location.href = "/index.html"
-            console.log(data);
-            console.log("post was successfully created!!")
-        } else{
+            location.href = "/create-auction.html"
+        } else {
             const error = await response.json();
             console.log(error);
             console.log("post was failed to creat!!")
         }
         createListingForm.reset();
     }
-    createAuctionListing().catch()
 
+    createAuctionListing().catch()
 
 
 });

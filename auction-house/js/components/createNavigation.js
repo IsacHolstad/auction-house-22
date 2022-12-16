@@ -20,15 +20,13 @@ function createNavigation() {
             <li class="p-8"><a href="profile.html"><span>Hey 👋 ${userName}</span></a></li>
             <li class="p-8"><button id="logout-button" class="text-red-500 hover:underline">
             Logout
-            </button></li>
-            `
+            </button></li>`
         }
         navBar.innerHTML = `
         <ul class="flex text-sm container">
         ${navLinks}
         </ul>
         `
-
     }
 }
 export default createNavigation;

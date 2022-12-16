@@ -1,9 +1,5 @@
 import {USER_REGISTER_URL} from "./settings/api.js";
-
-console.log(USER_REGISTER_URL);
 import {validatePassword, validationEmail} from "./utils/validation.js";
-
-console.log(validationEmail, validatePassword);
 
 const signUpForm = document.querySelector("#signup-form");
 
@@ -22,9 +18,6 @@ const confirmPasswordError = document.querySelector("#confirmPasswordError");
 
 const confirmPasswordErrorNotMatching = document.querySelector("#confirmPasswordErrorNotMatching");
 const generalErrorMessage = document.querySelector("#general-error-message");
-
-
-console.log(signUpForm, firstName, firstNameError, email, emailError, emailErrorNotValid, passwordError, password, confirmPasswordErrorNotMatching, confirmPassword, confirmPasswordError, generalErrorMessage);
 
 
 signUpForm.addEventListener('submit', function (event) {

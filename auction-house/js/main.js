@@ -12,4 +12,3 @@ if (logOutBtn) {
         window.location.replace("/login.html")
     })
 }
-

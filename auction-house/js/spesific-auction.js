@@ -20,9 +20,7 @@ async function getAuctionById() {
         }
 
     })
-    console.log(response)
     const data = await response.json()
-    console.log(data)
     auctionTitle.innerHTML = data.title
     auctionID.innerHTML = data.id
     auctionDesc.innerHTML = data.description
@@ -31,46 +29,40 @@ async function getAuctionById() {
 }
 
 
-getAuctionById();
+getAuctionById().then(r => {
+    console.log(r)
+});
 
 const auctionBidInput = document.querySelector("#listing-bid-input")
 const biddingForm = document.querySelector("#bidding-form")
 
-biddingForm.addEventListener("submit", function (event){
+biddingForm.addEventListener("submit", function (event) {
     event.preventDefault()
-    console.log("listing bid input: ", auctionBidInput.value)
-
     const amountToBid = {
-        "amount" : parseInt(auctionBidInput.value)
+        "amount": parseInt(auctionBidInput.value)
     }
 
     async function bidOnAuction() {
-        const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}/bids`,{
+        const response = await fetch(`https://api.noroff.dev/api/v1/auction/listings/${listingId}/bids`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${accessToken}`
             },
             body: JSON.stringify(amountToBid)
-    })
-        console.log("amount to bid: ", response)
+        })
         if (response.ok) {
             alert("Bid is made")
             const data = await response.json();
-            console.log(data);
-            console.log("bid successfully made")
         } else {
             alert("Bid failed")
             const error = await response.json();
-            console.log(error)
-            console.log("bid was not succeeded")
         }
         biddingForm.reset();
 
     }
-    bidOnAuction();
+
+    bidOnAuction().then(e => {
+        console.log(e)
+    })
 })
-
-
-
-

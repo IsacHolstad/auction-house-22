@@ -1,13 +1,12 @@
 import moment from "moment";
 import {getToken} from "./utils/storage.js";
-import {AUCTION_LISTINGS, SPESIFIC_AUCTION} from "./settings/api.js";
+import {AUCTION_LISTINGS} from "./settings/api.js";
 
-console.log(AUCTION_LISTINGS)
 
 const container = document.querySelector("#auction-container");
 const postNotificationMessage = document.querySelector(".posts__notification")
 
-const accessToken = getToken()
+const accessToken = getToken();
 
 if (!accessToken) {
     location.href = "/login.html"
@@ -34,10 +33,10 @@ if (!accessToken) {
                 const auctionEnding = post.endsAt;
                 const minutesToEnds = now.diff(auctionEnding, 'hours')
                 const auctionCreated = post.created;
-               // const auctionUpdated = post.updated;
+                const auctionUpdated = post.updated;
                 const auctionPrice = post._count.bids
                 const auctionBidAmount = post._count.bids;
-                //const auctionsBids = post.bids;
+                const auctionsBids = post.bids;
                 return(`<a href="./spesific-listing.html?post_id=${post.id}"><div class="mt-8 container">
                             <div class="border border-black-700 shadow rounded-xl p-4 max-w-3xl w-full mx-auto h-56">
                               <div class=" flex space-x-4">
@@ -70,36 +69,3 @@ if (!accessToken) {
 })().catch(err =>{
     postNotificationMessage.innerHTML = err
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
